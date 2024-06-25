@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="counter.css">
+    </head>
+    <body>
+        <div class="dark-background justify-content-center">
+            <h1 class="counter-heading">COUNTER</h1>
+            <p id="countervalue" class="counter-value">0</p>
+
+            <button class="decrease" onclick="Decrease()">Decrease</button>
+            <button class="reset" onclick="Reset()">Reset</button>
+            <button class="increment" onclick="Increment()">Increase</button>
+           
+            
+        </div>
+    </body>
+
+
+    <script>
+
+        let counterElement=document.getElementById("countervalue");
+        function Increment(){
+           let previousCountervalue=counterElement.textContent;
+           let updatedCountervalue=parseInt(previousCountervalue) + 1;
+           counterElement.textContent=updatedCountervalue;
+
+            if(updatedCountervalue > 0){
+                counterElement.style.color="green";
+        
+            }
+            
+            
+        }
+        function Decrease(){
+
+            let previousCountervalue=counterElement.textContent;
+           let updatedCountervalue=parseInt(previousCountervalue) - 1;
+           counterElement.textContent=updatedCountervalue;
+
+           if (updatedCountervalue < 0){
+            counterElement.style.color="red"
+           }
+        }
+        function Reset(){
+            updatedCountervalue=0;
+            counterElement.textContent=updatedCountervalue;
+            if (updatedCountervalue = 0){
+                counterElement.style.color="black";
+            }
+        }
+    </script>
+</html>
